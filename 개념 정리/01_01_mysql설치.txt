@@ -1,0 +1,42 @@
+
+1. mysql 설치 및 기본 설정 확인
+
+mysql pw : 0000
+
+mysql -h127.0.0.1 -uconnectuser -p connectdb
+
+connect123!@#
+
+- mysql 8버전 기준
+mysql> CREATE USER 'connectuser'@'%' IDENTIFIED BY 'connect123!@#';
+mysql> grant all privileges on connectdb.* to connectuser@'%';
+mysql> flush privileges;
+
+
+- 버전과 날짜 확인 쿼리
+
+select version(), current_date;
+
+- 키워드는 대소문자를 구분하지 않는다. ' ' 안에 값은 구분할 수 있다.
+
+- sql은 한줄로도, 여러줄로도 쓸 수 있다.
+
+- 쿼리를 쓰다가 끝에 \c를 붙여주면 바로 그 해당쿼리를 중단한다.
+
+- 테이블 확인 쿼리
+
+show tables;
+
+- sql파일을 열기
+(해당 디렉토리로 이동 후)
+
+mysql -uconnectuser -p connectdb < examples.sql
+
+-bonus table 보기
+
+desc bonus;
+
+
+
+
+

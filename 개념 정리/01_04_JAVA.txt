@@ -1,0 +1,32 @@
+C:\Users\J\Documents\Backend_study\eclipse-workspace>dir
+ C 드라이브의 볼륨: OS
+ 볼륨 일련 번호: 6001-81C4
+
+ C:\Users\J\Documents\Backend_study\eclipse-workspace 디렉터리
+
+2020-08-03  오후 12:21    <DIR>          .
+2020-08-03  오후 12:21    <DIR>          ..
+2020-08-03  오후 12:21                12 .gitignore
+2020-08-03  오후 12:15    <DIR>          .metadata
+2020-08-03  오후 12:21    <DIR>          first
+               1개 파일                  12 바이트
+               4개 디렉터리  910,071,091,200 바이트 남음
+
+C:\Users\J\Documents\Backend_study\eclipse-workspace>cd first
+
+C:\Users\J\Documents\Backend_study\eclipse-workspace\first>tree /f              -> 트리형태로 구성 상태 보여주기
+OS 볼륨에 대한 폴더 경로의 목록입니다.
+볼륨 일련 번호는 6001-81C4입니다.
+C:.
+│  .classpath
+│  .gitignore
+│  .project
+│
+├─.settings
+│      org.eclipse.jdt.core.prefs
+│
+├─bin
+│      module-info.class
+│
+└─src
+        module-info.java
