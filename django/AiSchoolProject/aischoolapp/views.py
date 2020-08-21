@@ -3,7 +3,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return render(request, "home.html")
+    chat = "Hello"
+    name = "Jay!"
+    return render(request, "home.html", {'user_chat': chat, 'user_name': name})
 
 def login(request):
     return HttpResponse("u got logged in!")
