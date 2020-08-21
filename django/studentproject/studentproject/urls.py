@@ -1,7 +1,7 @@
-"""AiSchoolProject URL Configuration
+"""studentproject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from aischoolapp import views
+from studentapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name = 'home'),
-    path('login/', views.login, name = 'login'),
-    path('signout/', views.signout, name = 'signout'),
-    path('result/', views.result, name = 'result')
-
+    path('', views.home, name='home'),
+    path('result/', views.result, name='result'),
 ]
