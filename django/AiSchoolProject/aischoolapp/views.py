@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import AiClass
 # Create your views here.
 
 students = ['광개토대왕', '홍길동', '세종대왕']
 
 def home(request):
-    chat = "Hello"
-    name = "Jay!"
-    return render(request, "home.html", {'user_chat': chat, 'user_name': name})
+    classes = AiClass.objects.all()
+    context = {'class object': classes}
+    return render(request, "home.html", context)
 
 def login(request):
     return HttpResponse("u got logged in!")
@@ -23,3 +24,5 @@ def result(request):
     else:
         is_exist = False
     return render(request, "result.html", {'user_name': name, 'is_exist': is_exist})
+
+
