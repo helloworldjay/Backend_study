@@ -12,4 +12,4 @@ class AiStudents(models.Model):
     name = models.CharField(max_length=30)
     phone_num = models.CharField(max_length=30)
     intro_text = models.TextField()
-    
+    class_num = models.IntegerField()

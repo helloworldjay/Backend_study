@@ -10,14 +10,16 @@
   {% csrf_token %}
   
   <br/>
-  {% for class in classes %}
+  <h1>home</h1>
+  {% for class in class_object %}
     <div>
-      
+      <a href = "{% url 'detail' class.pk %}">
         {{class.class_num}}
-        {{class.teacher}}
-      
+        {{class.lecturer}}
+      </a>
     </div>
   {% endfor %}
+  
   <br/>
   
     
