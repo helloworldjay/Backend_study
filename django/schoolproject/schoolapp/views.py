@@ -1,19 +1,25 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import AiClass
 
 # Create your views here.
 
-def home(request):
-    name = 'Jay'
-    student_num = 1
+# def home(request):
+#     name = 'Jay'
+#     student_num = 1
 
 
-    context = {
-        'name' : name,
-        'student_num' : student_num
-    }
+#     context = {
+#         'name' : name,
+#         'student_num' : student_num
+#     }
     
-    return render(request, 'home.html', context)
+#     return render(request, 'home.html', context)
+
+def home(request):
+    class_object = AiClass.objects.all()
+    return render(request, 'home.html', {'class_object':class_object})
+
 
 name_list = ['폰노이만', '앨런 튜링']
 

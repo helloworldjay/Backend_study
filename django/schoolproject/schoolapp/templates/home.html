@@ -9,10 +9,14 @@
 
   <form action= "{%url 'result' %}" method = 'POST'>
     {% csrf_token %}
-    <input name = 'username' placeholder = '이름을 입력하세요'/>
+    {% for class in class_object %}
+      {{class.class_num}}
+      {{class.lecturer}}
+    {% endfor %}
+    {% comment %} <input name = 'username' placeholder = '이름을 입력하세요'/>
     <br/>
     <br/>
-    <button type='submit'>제출하기</button>
+    <button type='submit'>제출하기</button> {% endcomment %}
   </form>
 </body>
 </html>
