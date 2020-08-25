@@ -1,23 +1,31 @@
 from django.shortcuts import render
-
-students = ['세종대왕', '광개토대왕']
+from django.http import HttpResponse
 
 # Create your views here.
+
 def home(request):
-    chat = "hi there"
-    name = "Jay"
-    context = {'chat' : chat, 'name' : name}
+    name = 'Jay'
+    student_num = 1
+
+
+    context = {
+        'name' : name,
+        'student_num' : student_num
+    }
+    
     return render(request, 'home.html', context)
 
+name_list = ['폰노이만', '앨런 튜링']
 
 def result(request):
     name = request.POST['username']
-    
-    if name in students :
+    if name in name_list:
         is_exist = True
-    else :
+    else:
         is_exist = False
+    context = {
+        'user_name' : name,
+        'is_exist' : is_exist
+    }
     
-    context = {'name' : name, 'is_exist' : is_exist}
-
-    return render(request, 'result.html', context)
+    return render(request, 'result.html', context) 

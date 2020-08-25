@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>학생 이름을 입력하시오</h1>
-    <form action = "{% url 'result' %}" method = POST>
+
+  <form action= "{%url 'result' %}" method = 'POST'>
     {% csrf_token %}
-    <input name = "username" placeholder = "이름을 입력하세요">
+    <input name = 'username' placeholder = '이름을 입력하세요'/>
     <br/>
     <br/>
-    <button type="submit">체크</button>
-    </form>
+    <button type='submit'>제출하기</button>
+  </form>
 </body>
 </html>
