@@ -15,3 +15,11 @@ class Post(models.Model):
     #     return len(self.message)
     # message_length.short_description = "메세지 글자수"
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    # 여기서 다른 앱의 model을 가져다 쓸 때에 상단에 import로 다른 앱의 모델을 불러올수도 있지만
+    # 그냥 여기에서 Post대신에 'blog1.Post'로 써주는 것도 가능하다.
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
