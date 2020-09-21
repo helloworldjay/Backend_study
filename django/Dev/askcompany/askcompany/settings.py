@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# __file__은 python이 py파일을 import될 때 파일 경로 => 절대 경로 => 부모의 경로 => 부모의 경로 
+# 결국 manage.py의 위치이다. (Root 경로)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -121,3 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = '' # TODO
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # root경로의 media 폴더에 저장하겠다. 이게 없으면 그냥 root폴더에 들어가게된다.
+# MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'public', 'media') # root폴더에서 한단계 올라간 후 public 폴더의 media 폴더에 저장하겠다.
