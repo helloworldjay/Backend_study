@@ -19,3 +19,6 @@ post_list = ListView.as_view(model=Post)
 def post_detail(request : HttpResponse, pk: int) -> HttpResponse: # type을 쓰는 쪽으로 유행이 가고있다
     response = HttpResponse()
     return response
+
+def archives_year(request, year):
+    return HttpResponse(f"{year}년 archives")
