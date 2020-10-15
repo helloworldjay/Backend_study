@@ -1,0 +1,17 @@
+Hello world Jay!
+
+{% if post %}
+    {% for p in post %}
+        <h1>작성자 : {{ p.author }}</h1>
+        <h1>글 내용 : {{ p.posts|slice:":30" }} <a href="#">...more</a> </h1> 
+        <h2>글 내용 : {{ p.summary }} <a href="{% url 'detail' p.id %}">...more</a> </h2> 
+        <h1>pk : {{ p.pk }}</h1>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+    {% endfor %}
+{% endif %}
